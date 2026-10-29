@@ -125,7 +125,7 @@ h1{font-size:clamp(24px,7vw,34px)}h2{font-size:clamp(22px,6.4vw,30px)}
 <!-- 2 -->
 <section class="pg" id="p1">
   <h2>BUKTI NOMOR 001</h2>
-  <div class="frame scan" id="sc1"><div class="tape"></div><img src="assets/foto-01.jpg" alt="Bukti 001"><div class="cap">Foto resmi, kelakuan belum tentu resmi</div></div>
+  <div class="frame scan" id="sc1"><div class="tape"></div><img src="assets/foto-001.jpg" alt="Bukti 001"><div class="cap">Foto resmi, kelakuan belum tentu resmi</div></div>
   <p class="sub">Dua manusia, satu frame. Tingkat kenormalan: masih dalam penyelidikan.</p>
   <div class="stk"><span>Foto resmi, kelakuan belum tentu resmi.</span><span>Kamera: bekerja. Kita: bergaya.</span><span>Aura anak baik-baik terdeteksi… katanya.</span></div>
   <button class="btn m" id="scanBtn">Lihat Hasil Pemeriksaan 🧪</button>
@@ -141,7 +141,7 @@ h1{font-size:clamp(24px,7vw,34px)}h2{font-size:clamp(22px,6.4vw,30px)}
 <!-- 3 -->
 <section class="pg" id="p2">
   <h2>BUKTI NOMOR 002</h2>
-  <div class="frame r zoom"><div class="tape"></div><img data-f2 src="assets/foto-02.jpg" alt="Bukti 002"></div>
+  <div class="frame r zoom"><div class="tape"></div><img data-f2 src="assets/foto-002.jpg" alt="Bukti 002"></div>
   <p class="box">Penyelidikan makin rumit. Salah satu tersangka mulai menutupi wajah. Apakah ini malu, ketawa, atau sedang menyembunyikan rahasia negara? 🤨</p>
   <div class="col">
     <button class="btn s" data-a="0">Dia Lagi Malu 😳</button>
@@ -167,7 +167,7 @@ h1{font-size:clamp(24px,7vw,34px)}h2{font-size:clamp(22px,6.4vw,30px)}
   <h2>GALERI KENANGAN</h2>
   <p class="sub">Ketuk foto untuk memperbesar.</p>
   <div class="gal">
-    <div class="frame" data-z="assets/foto-01.jpg"><img src="assets/foto-01.jpg" alt="Foto 1"></div>
+    <div class="frame" data-z="assets/foto-01.jpg"><img src="assets/foto-001.jpg" alt="Foto 1"></div>
     <div class="frame r" data-z="assets/foto-02.jpg"><img data-f2 src="assets/foto-02.jpg" alt="Foto 2"></div>
   </div>
   <div class="notes">
@@ -273,7 +273,7 @@ function zoom(src){var i=$("#lbi");i.onerror=function(){$("#lb").classList.remov
 $$("[data-z]").forEach(function(f){f.onclick=function(){var im=$("img",f);if(im)zoom(f.dataset.z)}});
 $("#lx").onclick=function(){$("#lb").classList.remove("on")};$("#lb").onclick=function(e){if(e.target.id==="lb")$("#lb").classList.remove("on")};
 var tm=null,si=0;
-function slide(){var src=["assets/foto-01.jpg","assets/foto-02.jpg"][si%2];var st=["💗","✨","🤍","🌸"][si%4];
+function slide(){var src=["assets/foto-001.jpg","assets/foto-002.jpg"][si%2];var st=["💗","✨","🤍","🌸"][si%4];
 $("#slc").innerHTML='<div class="frame '+(si%2?"r":"")+'"><img src="'+src+'" alt="Kenangan" style="max-height:62vh;width:auto;max-width:100%;margin:auto"><span class="pop" style="top:-14px;right:-8px">'+st+'</span></div>';
 var im=$("#slc img");im.onerror=function(){im.replaceWith(Object.assign(document.createElement("div"),{className:"ph",textContent:"Foto 2 belum dipasang 📷"}))};si++}
 $("#slBtn").onclick=function(){si=0;slide();$("#sl").classList.add("on");clearInterval(tm);tm=setInterval(slide,3500);beep(700)};
